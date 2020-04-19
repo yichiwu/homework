@@ -7,11 +7,16 @@ fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
     print("Please enter number of tickets: ")
     var tickets = scanner.nextInt()
-    print("How many round-trip tickets: ")
-    var roundTripTickets = scanner.nextInt()
+    while (tickets != -1) {
+        print("How many round-trip tickets: ")
+        var roundTripTickets = scanner.nextInt()
 
-    val ticket = TicketKotlin(tickets, roundTripTickets)
-    ticket.print()
+        val ticket = TicketKotlin(tickets, roundTripTickets)
+        ticket.print()
+
+        print("Please enter number of tickets: ")
+        tickets = scanner.nextInt()
+    }
 }
 
 class TicketKotlin(var tickets: Int, var roundTripTickets: Int){

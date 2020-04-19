@@ -8,10 +8,16 @@ public class Tester {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter number of tickets: ");
         int tickets = scanner.nextInt();
-        System.out.print("How many round-trip tickets: ");
-        int roundTripTickets = scanner.nextInt();
+        while (tickets != -1) {
 
-        Ticket tic = new Ticket(tickets, roundTripTickets);
-        tic.print();
+            System.out.print("How many round-trip tickets: ");
+            int roundTripTickets = scanner.nextInt();
+
+            Ticket tic = new Ticket(tickets, roundTripTickets);
+            tic.print();
+
+            System.out.print("Please enter number of tickets: ");
+            tickets = scanner.nextInt();
+        }
     }
 }
